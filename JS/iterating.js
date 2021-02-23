@@ -29,12 +29,17 @@ console.log(names.length);
      * array.
      */
 for(var nameOfFamily = 0; nameOfFamily < names.length; nameOfFamily++){
-    console.log(names[names.length]);
+    console.log(names[nameOfFamily]);
 }
     /**
      * TODO:
      * Refactor your above code to use a `forEach` loop
      */
+    console.log("this is a for Each Loop")
+names.forEach(function(aName){
+    console.log(aName);
+})
+
 
     /**
      * TODO:
@@ -50,4 +55,15 @@ for(var nameOfFamily = 0; nameOfFamily < names.length; nameOfFamily++){
      *  > last([1, 2, 3, 4, 5]) // return 5
      */
 
+    function first(array){
+        return array[0];
+    }
+
+    function second(array){
+        return array[1];
+    }
+
+    function last(array){
+        return array[last.length -1];
+    }
 })();
