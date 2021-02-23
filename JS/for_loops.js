@@ -30,16 +30,18 @@
 // Create a for loop that uses console.log to create the output shown below.
 
 
-    for (var i = 1; i <= 9; i++) {
-        var output = "";
-        for (var j = 1; j <= i; j++){
-            output = output + i.toString();
-    }
-        console.log(output)
-}
+//     for (var i = 1; i <= 9; i++) {
+//         var output = "";
+//         for (var j = 1; j <= i; j++){
+//             output = output + i.toString();
+//     }
+//         console.log(output)
+// }
 
-    //Create a for loop that uses console.log to create the output shown below.
+//Exercise 5
+// Create a for loop that uses console.log to create the output shown below.
 
-for(var i = 1; i <= 20; i++){
-
+for (var i = 1; i <= 20; i--){
+    var num = 105;
+console.log(num-i);
 }
