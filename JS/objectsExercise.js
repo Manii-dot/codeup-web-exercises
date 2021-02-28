@@ -13,9 +13,9 @@
      */
 
     var person = {
-        firstName:"Emmanuel",
+        firstName: "Emmanuel",
         lastName: "Stephen",
-        sayHello: function(){
+        sayHello: function () {
             alert("Hello from " + this.firstName + " " + this.lastName + "!")
         }
     }
@@ -53,13 +53,13 @@
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
     ];
-shoppers.forEach(function (shopper) {
-   if(shopper.amount >= 200){
-       console.log(shopper.name + " you paid over $" + shopper.amount + " therefore you will only pay $" + ((shopper.amount) - (.12 * shopper.amount)) + " as a discount.")
-   }else{
-       console.log(shopper.name + " you only paid $" + shopper.amount)
-   }
-});
+    shoppers.forEach(function (shopper) {
+        if (shopper.amount >= 200) {
+            console.log(shopper.name + " you paid over $" + shopper.amount + " therefore you will only pay $" + ((shopper.amount) - (.12 * shopper.amount)) + " as a discount.")
+        } else {
+            console.log(shopper.name + " you only paid $" + shopper.amount)
+        }
+    });
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -74,46 +74,46 @@ shoppers.forEach(function (shopper) {
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    var books = [
-        {
-            title: "Atomic Habits",
-            author: {
-                firstName: "James",
-                lastName: "Clear",
-            }
-        },
-        {
-            title: "Ready Player Two",
-            author: {
-                firstName: "Ernest",
-                lastName: "Cline",
-            }
-        },
-        {
-            title: "Second hand Curses",
-            author: {
-                firstName: "Drew",
-                lastName: "Hayes",
-            }
-        },
-        {
-            title: "Rich Dad Poor Dad",
-            author: {
-                firstName: "Robert",
-                lastName: "Kiyosaki",
-            }
-        },
-        {
-            title: "The Five Love Languages: The Secrets to Love That Lasts",
-            author:{
-                firstName: "Gary",
-                lastName: "Chapman",
-            }
-        }
-    ];
-    console.log(books[1].title);
-    console.log(books[1].author.firstName);
-    console.log(books[1].author.lastName);
+    // var books = [
+    //     {
+    //         title: "Atomic Habits",
+    //         author: {
+    //             firstName: "James",
+    //             lastName: "Clear",
+    //         }
+    //     },
+    //     {
+    //         title: "Ready Player Two",
+    //         author: {
+    //             firstName: "Ernest",
+    //             lastName: "Cline",
+    //         }
+    //     },
+    //     {
+    //         title: "Second hand Curses",
+    //         author: {
+    //             firstName: "Drew",
+    //             lastName: "Hayes",
+    //         }
+    //     },
+    //     {
+    //         title: "Rich Dad Poor Dad",
+    //         author: {
+    //             firstName: "Robert",
+    //             lastName: "Kiyosaki",
+    //         }
+    //     },
+    //     {
+    //         title: "The Five Love Languages: The Secrets to Love That Lasts",
+    //         author: {
+    //             firstName: "Gary",
+    //             lastName: "Chapman",
+    //         }
+    //     }
+    // ];
+    // console.log(books[1].title);
+    // console.log(books[1].author.firstName);
+    // console.log(books[1].author.lastName);
 
     /**
      * TODO:
@@ -139,12 +139,12 @@ shoppers.forEach(function (shopper) {
      *      ---
      *      ...
      */
-    books.forEach(function(book, index){
-        console.log("Book # " + (index + 1));
-        console.log("Title: " + book.title);
-        console.log("Author: " + book.author.firstName + " " + book.author.lastName);
-        console.log("---");
-    });
+    // books.forEach(function(book, index){
+    //     console.log("Book # " + (index + 1));
+    //     console.log("Title: " + book.title);
+    //     console.log("Author: " + book.author.firstName + " " + book.author.lastName);
+    //     console.log("---");
+    // });
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -155,9 +155,23 @@ shoppers.forEach(function (shopper) {
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    function createBook(books) {
-        function showBookInfo(){
-
+    function createBook(bookTitle, authorFirstName, authorLastName) {
+        var newBook = {
+            title: bookTitle,
+            author: {
+                firstName: authorFirstName,
+                lastName: authorLastName
+            }
         }
+        return newBook;
+    }
+
+    console.log(createBook("Forever Miracle", "Manny", "Jack"))
+
+    function showBookInfo(bookObject, bookNumber) {
+        console.log("Book # " + (bookNumber + 1));
+        console.log("Title: " + bookObject.title);
+        console.log("Author: " + bookObject.author.firstName + " " + bookObject.author.lastName);
+        console.log("---");
     }
 })();
