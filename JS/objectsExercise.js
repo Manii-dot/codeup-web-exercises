@@ -74,46 +74,46 @@
      * > console.log(books[0].author.lastName) // "Adams"
      */
 
-    // var books = [
-    //     {
-    //         title: "Atomic Habits",
-    //         author: {
-    //             firstName: "James",
-    //             lastName: "Clear",
-    //         }
-    //     },
-    //     {
-    //         title: "Ready Player Two",
-    //         author: {
-    //             firstName: "Ernest",
-    //             lastName: "Cline",
-    //         }
-    //     },
-    //     {
-    //         title: "Second hand Curses",
-    //         author: {
-    //             firstName: "Drew",
-    //             lastName: "Hayes",
-    //         }
-    //     },
-    //     {
-    //         title: "Rich Dad Poor Dad",
-    //         author: {
-    //             firstName: "Robert",
-    //             lastName: "Kiyosaki",
-    //         }
-    //     },
-    //     {
-    //         title: "The Five Love Languages: The Secrets to Love That Lasts",
-    //         author: {
-    //             firstName: "Gary",
-    //             lastName: "Chapman",
-    //         }
-    //     }
-    // ];
-    // console.log(books[1].title);
-    // console.log(books[1].author.firstName);
-    // console.log(books[1].author.lastName);
+    var books = [
+        {
+            title: "Atomic Habits",
+            author: {
+                firstName: "James",
+                lastName: "Clear",
+            }
+        },
+        {
+            title: "Ready Player Two",
+            author: {
+                firstName: "Ernest",
+                lastName: "Cline",
+            }
+        },
+        {
+            title: "Second hand Curses",
+            author: {
+                firstName: "Drew",
+                lastName: "Hayes",
+            }
+        },
+        {
+            title: "Rich Dad Poor Dad",
+            author: {
+                firstName: "Robert",
+                lastName: "Kiyosaki",
+            }
+        },
+        {
+            title: "The Five Love Languages: The Secrets to Love That Lasts",
+            author: {
+                firstName: "Gary",
+                lastName: "Chapman",
+            }
+        }
+    ];
+    console.log(books[1].title);
+    console.log(books[1].author.firstName);
+    console.log(books[1].author.lastName);
 
     /**
      * TODO:
