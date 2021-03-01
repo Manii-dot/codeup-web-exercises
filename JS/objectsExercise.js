@@ -174,4 +174,43 @@
         console.log("Author: " + bookObject.author.firstName + " " + bookObject.author.lastName);
         console.log("---");
     }
+
+
+
+    // JS 101 1-50 reviews----------------------------------------------------------------------------------------------
+    function reverseSign(x){
+        if(x>0 || x<0){
+            return x * -1;
+        }
+    }
+    console.log(reverseSign(3));
+
+    function sumOfSquares(x,y){
+        // var numX = x**2;
+        // var numY = y**2;
+        return (x**2) + (y**2);
+    }
+    console.log(sumOfSquares(3,2));
+
+    function hasVowels(val) {
+        if (val.match(/["a","e","i","o","u"]/i)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+        console.log(hasVowels("yesssesss"));
+
+    //#45
+    function countVowels(val){
+        var value = val.toLowerCase();
+        var value1 = (value.match(/["a","e","i","o","u"]/g)||[].length);
+        if(value1 !==0){
+            return value1.length;
+        }else{
+            return val = 0;
+        }
+    }
+    console.log(countVowels("banana"));
+
 })();
