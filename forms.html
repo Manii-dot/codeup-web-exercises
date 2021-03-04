@@ -5,17 +5,16 @@
     <title>Register With Us</title>
 </head>
 <body>
-<form method="GET" action="https://request-inspector.glitch.me/">
+<form method="POST" action="https://request-inspector.glitch.me/">
     <label for="email">Email</label>
-    <input id="email" name="email" type="text">
+    <input id="email" name="email" type="email" placeholder="something@example.com">
     <br>
 
     <label for="password">Password</label>
     <input id="password" name="password" type="password">
     <br>
-
-    <textarea rows = "5" cols = "50" name = "bio">
-            Enter bio here...
+    <label for="bio">Bio</label>
+    <textarea rows = "30" cols = "10" name = "bio" id="bio" placeholder="Enter bio here...">
          </textarea>
 
     <h2>How did you hear about us?</h2>
