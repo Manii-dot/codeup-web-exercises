@@ -1,6 +1,48 @@
 
 
 .fancy-header {
-    color: purple; /* single line comment */
+    /*color: purple; !* single line comment *!*/
     text-decoration: underline;
+}
+
+h1{
+    color: cornflowerblue;
+    text-align: center;
+}
+
+h3{
+    color: cornflowerblue;
+    text-decoration: underline;
+    /*text-align: center;*/
+}
+
+body{
+    background-color: beige;
+    background-image: url("https://previews.123rf.com/images/cienpies/cienpies1408/cienpies140800046/30667881-clean-enso-zen-circle-illustration-and-buddha-silhouette-with-drop-shadow-over-white-background-.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Alfa Slab One', cursive;
+    font-family: 'Crete Round', serif;
+}
+
+ol {
+    list-style-type: upper-roman;
+    /*text-align: center;*/
+}
+
+ul {
+    list-style: square;
+    /*text-align: center;*/
+}
+
+table {
+    width: 100%;
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: large;
+}
+
+a:hover {
+    background-color: yellow;
+    color: red;
 }
