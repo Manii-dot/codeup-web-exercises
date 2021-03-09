@@ -23,6 +23,7 @@ body{
     background-size: cover;
     font-family: 'Alfa Slab One', cursive;
     font-family: 'Crete Round', serif;
+    text-align: center;
 }
 
 ol {
@@ -36,13 +37,22 @@ ul {
 }
 
 table {
-    width: 100%;
-    border: 1px solid black;
+    border: thin dotted black;
     border-collapse: collapse;
     font-size: large;
+}
+
+th td{
+    border: thin dotted black;
+    padding: 7.5px;
 }
 
 a:hover {
     background-color: yellow;
     color: red;
+}
+
+.auto-margin{
+    margin-left: auto;
+    margin-right: auto;
 }

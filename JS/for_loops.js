@@ -41,7 +41,6 @@
 //Exercise 5
 // Create a for loop that uses console.log to create the output shown below.
 
-for (var i = 1; i <= 20; i--){
-    var num = 105;
-console.log(num-i);
+for (var i = 100; i > 4; i-= 5){
+console.log(i);
 }
