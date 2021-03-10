@@ -22,15 +22,22 @@ header {
     min-height: 300px;
     padding-top: 275px;
 }
+
+.nav-item{
+    padding: 1.5em;
+    float: left;
+}
 a {
     color: var(--link-color);
+    /*float: left;*/
+    /*padding: 1em;*/
 }
 .top-nav {
     background: var(--light-bg);
-}
-
-.nav-item{
-    float: left;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    /*Yes it does go over the value.*/
 }
 
 .nav {
@@ -48,7 +55,62 @@ a {
 }
 .profile {
     background: var(--light-bg);
+    height: 80px;
 }
+
+.profile-image{
+    position: absolute;
+    top: 250px;
+}
+
+.profile-form{
+    line-height: 80px;
+}
+
+.profile-details{
+    width: 25%;
+    float: left;
+    margin:0.5em;
+}
+
+.timeline{
+    width: 50%;
+    float: left;
+    background-color: white;
+    margin:0.5em;
+}
+
+.who-to-follow{
+    width: 25%;
+    float: right;
+    /*background-color: white;*/
+    margin:0.5em;
+}
+
+.container{
+    margin: 2em;
+}
+
+.media{
+    width: 100%;
+    background: var(--light-bg);
+    border-bottom: 1px solid black;
+    border-bottom-color: var(--separator-color);
+    padding: 0.5em;
+    overflow: auto;
+}
+
+.media-image{
+    width: 50px;
+    float: left;
+    margin-top: 1.33em;
+}
+
+.media-body{
+    width: calc(25 - 1em);
+    float: left;
+}
+
 .btn {
     border: 1px solid var(--main-link-color);
     color: var(--main-link-color);
@@ -56,10 +118,13 @@ a {
     font-weight: bold;
     padding: 8px;
     border-radius: 5px;
+    /*position: relative;*/
+    /*top: 17px;*/
 }
 .btn-large {
     font-size: 1.3em;
     padding: 10px;
+    /*float: top;*/
 }
 .img-circle {
     border-radius: 100%;
