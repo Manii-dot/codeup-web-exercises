@@ -76,7 +76,7 @@ a {
 .timeline{
     width: 50%;
     float: left;
-    background-color: white;
+    /*background-color: white;*/
     margin:0.5em;
 }
 
@@ -107,8 +107,17 @@ a {
 }
 
 .media-body{
-    width: calc(25 - 1em);
+    width: calc(100% - 50px);
     float: left;
+}
+
+.profile-entry{
+    margin: 0.5em;
+}
+
+.profile-items{
+    padding: 0;
+    list-style-type: none;
 }
 
 .btn {
