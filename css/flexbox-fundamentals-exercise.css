@@ -34,8 +34,6 @@ h2, h3 {
     padding: 1em;
     margin: 0 auto;
     /* enter needed declarations here */
-
-
 }
 
 section {
@@ -48,24 +46,39 @@ section {
 section:nth-of-type(1) {
     height: 3em;
     background: lightgreen;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     /* enter needed declarations here */
 }
 section:nth-of-type(1) div:last-child {
     /* enter needed declarations here */
+    align-items: baseline;
+}
+h2{
+    margin: 5px;
 }
 
 .purple-box {
     background: fuchsia;
     width: 3em;
     height: 1em;
+    margin: 1em;
 }
 
 .purple-box:nth-of-type(1) {
     /* enter needed declarations here */
+    align-self: flex-start;
+    align-self: center;
+    flex-grow: 1;
+    flex-grow: 2;
 }
 
 .purple-box:nth-of-type(2) {
     /* enter needed declarations here */
+    align-self: flex-start;
+    align-self: center;
+    flex-grow: 3;
 }
 
 .blue-box {
@@ -76,10 +89,15 @@ section:nth-of-type(1) div:last-child {
 
 section:nth-of-type(3) {
     /* enter needed declarations here */
+    flex-grow: 1;
 }
 
 section:nth-of-type(3) h3 {
     /* enter needed declarations here */
+    align-content: space-evenly;
+    justify-content: center;
+    margin: 1em 0em;
+    /*align-items: flex-start;*/
 
 }
 
@@ -88,7 +106,7 @@ section:nth-of-type(3) h3 {
     width: 2em;
     height: 2em;
     border-radius: 1em;
-    margin: .5em;
+    margin: 1em;
 }
 
 .large-brown-box {
@@ -96,6 +114,7 @@ section:nth-of-type(3) h3 {
     width: 5em;
     background: brown;
     /* enter needed declarations here */
+
 }
 
 .large-brown-box:nth-of-type(2) {
@@ -104,6 +123,8 @@ section:nth-of-type(3) h3 {
 
 section:nth-of-type(5) {
     /* enter needed declarations here */
+    margin: 1em;
+    justify-content: space-evenly;
 }
 
 .yellow-box {
@@ -116,6 +137,9 @@ section:nth-of-type(6) {
     background: coral;
     height: 14em;
     /* enter needed declarations here */
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-around;
 }
 
 .grey-box {
