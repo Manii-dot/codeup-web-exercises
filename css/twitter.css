@@ -24,6 +24,7 @@ header {
 }
 
 .nav-item{
+    display: inline-block;
     padding: 1.5em;
     float: left;
 }
@@ -36,7 +37,7 @@ a {
     background: var(--light-bg);
     position: fixed;
     width: 100%;
-    z-index: 1000;
+    z-index: 1;
     /*Yes it does go over the value.*/
 }
 
@@ -68,21 +69,21 @@ a {
 }
 
 .profile-details{
-    width: 25%;
     float: left;
+    width: calc(25% - 1em);
     margin:0.5em;
 }
 
 .timeline{
-    width: 50%;
     float: left;
+    width: calc(50% - 1em)
     /*background-color: white;*/
     margin:0.5em;
 }
 
 .who-to-follow{
-    width: 25%;
     float: right;
+    width: calc(25% - 1em)
     /*background-color: white;*/
     margin:0.5em;
 }
@@ -101,7 +102,7 @@ a {
 }
 
 .media-image{
-    width: 50px;
+    max-width: 50px;
     float: left;
     margin-top: 1.33em;
 }
