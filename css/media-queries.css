@@ -19,6 +19,9 @@ html{
 }
 
 body{
+padding: 1em;
+    display: flex;
+    flex-direction: column;
 
 }
 
@@ -39,6 +42,10 @@ h1{
     font-weight: bolder;
 }
 
+nav{
+    width: 100%;
+}
+
 nav ul li{
     background-color: #c5c5c5;
     margin: 1em 0 1em 0;
@@ -51,8 +58,8 @@ nav ul li{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 339px;
-    height: 224px;
+    width: 100%;
+    height: auto;
 
 }
 
@@ -62,4 +69,33 @@ section{
 
 footer{
     margin-top: 5em;
+}
+
+
+@media screen and (min-width: 890px){
+
+    .alert-info{
+        display: none;
+    }
+
+
+    h1{
+        display: inline-block;
+        text-align: left;
+        font-weight: bolder;
+    }
+nav{
+    display: inline-flex;
+    flex-direction: row;
+
+
+}
+    nav ul li{
+        background-color: white;
+        margin: 1em 0 1em 0;
+        list-style-type: none;
+    }
+
+
+
 }
