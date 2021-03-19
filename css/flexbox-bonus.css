@@ -1,0 +1,36 @@
+/*css reset*/
+/*font-family: 'Raleway', sans-serif;
+** background color: black; font color: white
+** font: we found raleway to be closest
+** top container: flex, let's see what happens
+	** kill default styling on lists
+	** uppercase LOGO uppercase SLOGAN COMPANY
+** hr: slightly shorted in width! maybe 80%? Style it differently -
+** bottom container
+	** icon-container centered >
+		** spacing icons with space between? space evenly?
+		** Copyright aligned horizontally centered?*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    background-color: black;
+    color: white;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+.top-container{
+    display: flex;
+}

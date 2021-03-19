@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*
+-FOR MOBILE LOOKS-
+-blue rectangle for main content link with content centered
+-google font for big header and content is centered as well
+-each nav link on a grey rectangle with style removed but stay underlined
+    -hover color red
+-picture to be 339 x 224 for place holder
+-Main section and sub section stays the same with paragraphs wrap around to fit screen
+ */
+
+html{
+    font-family: 'Poppins', sans-serif;
+}
