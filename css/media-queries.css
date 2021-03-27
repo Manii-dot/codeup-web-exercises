@@ -26,20 +26,21 @@ padding: 1em;
 }
 
 .alert-info{
-    /*display: flex;*/
-    /*text-decoration: none;*/
+    display: flex;
+    text-decoration: none;
     background-color: #c6f6f7;
     border: 2px solid lightgrey;
-    text-align: center;
     height: 3.5em;
-    /*align-items: center;*/
-    /*align-content: center;*/
-    padding-top: 10px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    color: black;
 }
 
 h1{
+
     text-align: center;
-    font-weight: bolder;
+    font-size: 3em;
 }
 
 nav{
