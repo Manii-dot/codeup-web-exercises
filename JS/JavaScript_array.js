@@ -42,8 +42,43 @@
 /*
 6-Write a JavaScript program which accept a number as input and insert dashes (-) between each two even numbers. For example if you accept 025468 the output should be 0-254-6-8.
  */
-function program(num){
-    if(){
+// function program(num) {
+//     var strArr = num.split('');
+//     var numArr = strArr.map(Number);
+//     for (var i = 0; i < numArr.length; i++) {
+//         if (numArr[i-1]%2===0 && numArr[i]%2===0 ) {
+//             numArr.splice(i, 0, '-');
+//         }
+//     }
+//     return numArr.join('');
+// }
+// console.log(program('025468'));
 
-    }
-}
+
+//For Loops
+// var Shapes = ['square', 'rectangle', 'circle', 'triangle', 'Pentagons', 'hexagon', 'heptagram', 'triquetra', 'lemniscate'];
+
+// for(var i=0; i<Shapes.length; i++){
+//     console.log('The shape at index '+i+' is: '+Shapes[i]);
+// };
+
+// var intervalId = Shapes.forEach(function(shape) {
+//     console.log('Here is a lovely shape: ' + shape + '.');
+// });
+
+// var i =-1;
+// var max = Shapes.length;
+// var intervalId = setInterval(function(){
+//     if(i>=max){
+//         clearInterval(intervalId);
+//         console.log('No more shapes to show!')
+//     }else{
+//         i++;
+//         console.log('The shape at index '+i+' is: '+Shapes[i])
+//     }
+//      }, 5000);
+
+//Not sure how to take care of the imdex 9 being undefined.
+
+//---------------------------------------------OBJECT ORIENTED FUNCTIONS--------------------------------------------------------//
+
