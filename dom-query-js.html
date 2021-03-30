@@ -25,19 +25,21 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+
+
 <script>
     (function() {
         "use strict";
         // TODO: Uncomment next line and get the main header element by id
-        // var mainHeader = ;
+        var mainHeader = document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-
+        mainHeader.innerHTML = "JavaScript is Cool";
         // TODO: Uncomment the next line and get the sub header element by id
-        // var subHeader = ;
+        var subHeader = document.getElementsByTagName('ul');
 
         // TODO: Set the text color of subHeader to blue
-
+        subHeader.style['background-color'] = "#4e94ef";
         // TODO: Uncomment the next line and get all list items
         // var listItems = ;
 
