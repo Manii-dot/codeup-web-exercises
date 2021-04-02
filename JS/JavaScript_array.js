@@ -62,7 +62,7 @@
 //     console.log('The shape at index '+i+' is: '+Shapes[i]);
 // };
 
-// var intervalId = Shapes.forEach(function(shape) {
+// var intervalId = Shapes.forEach(fuction(shape) {
 //     console.log('Here is a lovely shape: ' + shape + '.');
 // });
 
@@ -80,5 +80,40 @@
 
 //Not sure how to take care of the imdex 9 being undefined.
 
-//---------------------------------------------OBJECT ORIENTED FUNCTIONS--------------------------------------------------------//
+//-----------------------------------------------------------------------------------------------------//
 
+// function pipeFix(numbers){
+//     var first = numbers[0];
+//     var last = numbers[numbers.length-1];
+//
+//     var arr = [];
+//     for(var i = first; i <= last; i++) {
+//         arr.push(i);
+//     }
+//     return arr;
+// }
+// console.log(pipeFix([1,2,3,5,6,8,9,20]));
+
+
+// Assessment Prep
+//
+// function totalPets(array){
+//     var sum = 0;
+//     for(var = i; i < petsArray.length; i++ ){
+//         sum = sum + petsArray[i].numPets;
+//     }
+//     return sum;
+// }
+// console.log(totalPets())
+
+// band.shred = function() {
+//     console.log('RAAAAAAAAAA!!!!');
+// }
+//
+// shred();
+//
+// console.log(10 % 3);
+
+var array = ['John', 'Paul', 'George', 'Ringo', 'Santana'];
+
+console.log(array[array.length - 3]);
