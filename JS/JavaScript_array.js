@@ -207,18 +207,19 @@ var petsArray = [{
 
 // Write a function named printRecipe that accepts a recipe object. A recipe object will have properties of title (a string), servings (a number), and ingredients (an array of strings). printRecipe will console.log each property in this format:
 //     Example object:
-     var caldoRecipe = {name: "Caldo con Pollo", servings: 4, ingredients: ["whole chicken", "carrots", "cabbage", "potatoes", "jalapeno", "cilantro", "salt", "pepper", "cumin", "onion powder", "garlic powder"]}
+//      var caldoRecipe = {name: "Caldo con Pollo", servings: 4, ingredients: ["whole chicken", "carrots", "cabbage", "potatoes", "jalapeno", "cilantro", "salt", "pepper", "cumin", "onion powder", "garlic powder"]}
 // Expected look in console from running printRecipe(caldoRecipe):
 // Caldo con Pollo
 // Serves: 4
 // Required ingredients: whole chicken, carrots, cabbage, potatoes, jalapeno, cilantro, salt, pepper, cumin, onion powder, garlic powder
 
-function printRecipe(x){
-    for(var i = 0; i < caldoRecipe.length; i++){
-        return(caldoRecipe[i]);
-    }
-}
-console.log(printRecipe(caldoRecipe));
+// function printRecipe(recipe){
+//     console.log(recipe.name);
+//     console.log("Serves: " + recipe.servings);
+//     console.log("Required ingredients: " + recipe.ingredients);
+// }
+//
+// printRecipe(caldoRecipe);
 
 
 
@@ -226,4 +227,29 @@ console.log(printRecipe(caldoRecipe));
 // Write a function named convertAddressToObject that accepts a string that contains a street number (as a string) and street name separated by a space characters, and returns an object with properties streetNumber and streetName.
 // convertAddressToObject('8626 Sunny Oaks') // {streetNumber: '8646', streetName: 'Sunny Oaks'}
 // convertAddressToObject('5408 Villa Nueva') // {streetNumber: '5408', streetName: 'Villa Nueva'}
-function convertAddressToObject
+// function convertAddressToObject(string){
+//     var array = string.split(" ");
+//     var address = {};
+//     address.streetNumber = array[0];
+//     address.streetName = array[1] +" " + array[2];
+//
+//     // console.log(address);
+// }
+
+function convertAddressToObject(x) {
+    var addressNum = '';
+    var addressString = '';
+    var address = {};
+    for (var i = 0; i < x.length; i++) {
+        if (x[i] === '0'|| x[i] === '1' || x[i] === '2' || x[i] === '3' || x[i] === '4' || x[i] === '5' || x[i] === '6' || x[i] === '7' || x[i] === '8' || x[i] === '9') {
+            addressNum = addressNum + x[i];
+        } else {
+            addressString = addressString + x[i];
+        }
+    }
+    address.streetNumber = addressNum;
+    address.streetName = addressString;
+    return address;
+}
+
+console.log(convertAddressToObject('5408 Villa Nueva'));
