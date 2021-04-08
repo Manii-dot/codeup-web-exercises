@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+#box{
+    width: 250px;
+    height: 250px;
+    background-color: darkslategray;
+    border: 1px solid red;
+}
+.button{
+    padding: 2em;
+    margin-top: 1em;
+}
+
+.toggleClass1{
+    background-color: rebeccapurple;
+}
+.toggleClass2{
+    background-color: cornflowerblue;
+}
+
+
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<button class="button" id="changeBoxSize">Double the box</button>
+<button class="button" id="toggleClass">Toggle a class!</button>
+
+
+<!--Jquery cdn-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script>
+    //when button is clicked the box should change in size
+    $("#changeBoxSize").click(function (){
+        $("#box").css("height", "500px")
+        $("#box").css("width", "500px")
+    })
+
+    //
+
+    var instructions = function (e){
+        if($("#box").hasClass("toggleClass1")){
+            $("#box").toggleClass("toggleClass2")
+        } else {
+            $("#box").toggleClass("toggleClass1")
+        }
+    }
+
+    $("#toggleClass").click(instructions)
+</script>
+</body>
+</html>
