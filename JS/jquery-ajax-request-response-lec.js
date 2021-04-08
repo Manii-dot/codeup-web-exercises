@@ -24,24 +24,33 @@ var jsonOfCar = JSON.stringify(car)
      * TO DO TOGETHER: Let's make our first AJAX request. Generate a new Hookbin
      * endpoint, then query it for a username...
      */
-    var hookbinURL = 'https://hookb.in/2qjKpOzVYQu9BBKGpOng';
-    $.ajax(hookbinURL);
+    // var hookbinURL = 'https://hookb.in/2qjKpOzVYQu9BBKGpOng';
+    // $.ajax(hookbinURL);
+    //
 
     /*
      * TO DO TOGETHER: For this next one, we'll send over some data. Add the
      * following JavaScript Object to your Hookbin AJAX request:
      */
-    $.ajax(hookbinURL, {
-        method: "POST",
-        data: JSON.stringify(car)
-    });
+    // $.ajax(hookbinURL, {
+    //     method: "POST",
+    //     data: JSON.stringify(car)
+    // });
 
+    //Send a get request and query for the username bob.
+    //$.ajax(hookbinURL + "?username=bob");
 
     /*
      * TO DO: Refactor the first example using a GET request object instead of
      * appending a query to the url.
      */
-
+    // $.ajax(hookbinURL, {
+    //     method: "POST",
+    //     data: {
+    //         username: "bob",
+    //         active: true
+    //     }
+    // });
 
     /*********************************************
      *              REQUESTS and RESPONSES
@@ -51,14 +60,24 @@ var jsonOfCar = JSON.stringify(car)
      * TO DO TOGETHER: Now, let's see how we can use AJAX requests to communicate with an
      * API and get data back. Uncomment the line below.
      */
+    var swapiBaseURL = 'https://swapi.dev/api/'
 
-
+    $.ajax(swapiBaseURL + "people", {
+        method: "GET",
+        data: {
+            search: "r2"
+        }
+    }).done(function(data){
+        console.log(data);
+    });
 
     /*
      * TO DO: Look up the Star Wars API and make a similar request that would
      * return a list of all Star Wars films.
      */
-
+    $.ajax(swapiBaseURL + "films/").done(function (data){
+        console.log(data);
+    });
 
 
 
@@ -70,7 +89,7 @@ var jsonOfCar = JSON.stringify(car)
      * TO DO TOGETHER: Let's make a request to the books inventory we saved
       * previously.
      */
-    //var myBooks = ???
+    var myBooks = $.ajax("data/book.json")
 
     function onSuccess (data){
         console.log(data);
@@ -89,20 +108,24 @@ var jsonOfCar = JSON.stringify(car)
      * TO DO TOGETHER: What if we want to display a message if this AJAX request
      * fails?
      */
-
+    myBooks.fail(onFail);
 
 
     /*
      * TO DO TOGETHER: How about a function that always runs whether the request
      * fails or not?
      */
-
+    myBooks.always(onAlways);
 
 
     /*
      * TO DO: Refactor your Star Wars API request to log a message that says
      * "Something wrong with your request..." if it fails.
      */
+
+    var swapiFilm = $.ajax(swapiBaseURL+ "films/").fail(function(){
+        console.log("Fail to load")
+    });
 
     /*
      * TO DO: Refactor your Star Wars API request to log a message that says
@@ -117,9 +140,16 @@ var jsonOfCar = JSON.stringify(car)
      * Take a look at the object that is being returned. Write a console log
       * that displays the director of the film.
      */
+    var newHopeRequest = $.ajax(swapiBaseURL+ "films/", {
+        method: "GET",
+        data: {
+            search: "A New Hope"
+        }
+    });
 
-
-
+    newHopeRequest.done(function(data){
+       console.log(data.results[0].director);// this is how to look for a specific items within the result
+    });
 
     /*
      * TO DO: Create a new variable that makes a similar request. Search for
@@ -132,6 +162,15 @@ var jsonOfCar = JSON.stringify(car)
      * TO DO: Make a request to books.json. Return the author of "The
      * Canterbury Tales."
      */
+    var myBooks1 = $.ajax("data/book.json");
+
+    myBooks1.done(function(data){
+        data.forEach(function (book){
+            if(book.title === "The Canterbury Tales"){
+                console.log("The Canterbury Tales author is: "+book.author);
+            }
+        });
+    });
 
 
 
@@ -167,10 +206,29 @@ var jsonOfCar = JSON.stringify(car)
 
     // this variable stores our request
 
+    function generateBooks(){
+        var booksRequest = $.ajax("data/book.json");
+
+        booksRequest.done(function(data){
+
+            $.each(data, function(index, book){
+                var content = "";
+                content += "<h2>" + book.title + "</h2>"
+                content += "<h4>" + book.author + "</h4>"
+                console.log(content);
+                $('#main').append(content);
+            });
+        });
+
+        booksRequest.fail(function(){
+            $('#main').append("<h1>Error getting books! :(</h1>")
+        })
+    }
+
 
 
     // call the function to generate data on page load
-
+    generateBooks();
 
 
     /*
@@ -183,6 +241,10 @@ var jsonOfCar = JSON.stringify(car)
      */
 
     // event listener on refresh button
-
+    $('#refresh').click(function(e){
+        console.log("Refresh button was clicked.");
+        $('#main').html('');
+        generateBooks();
+    });
 
 });
