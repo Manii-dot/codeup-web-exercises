@@ -70,8 +70,21 @@
     <h1 id="coords"></h1>
     <hr>
     <form action="">
-
+        <label>Name</label><br>
+        <input type="text" id="name" name="name">
+        <br>
+        <label>Email</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label>Gender</label><br>
+        <select name="gender" id="gender">
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="Prefere-not-to-say">Prefere not to say</option>
+        </select>
+        <br>
+        <input type="submit" value="Submit">
     </form>
+    <h2 id="genderDisplay"></h2>
 </div>
 
 <script>
@@ -124,13 +137,26 @@
     //     $('.para1').toggle();
     // })
 
-    //EVENT
+    //EVENT-------------------------------
     //$('#btn2').click(function (e){// this event with the innerHTML will alert the btn2
         // alert(e.currentTarget.innerHTML);
         // alert(e.currentTarget.className);
     //})
     $(document).mousemove(function(e){//cool ways to append the content on the html web page
         $('#coords').html('Coords: Y'+e.clientY+" X: "+e.clientX);
+    });
+    //EXAMPLE OF FOCUS AND BLUR---------------
+    $('input').focus(function(){
+        $(this).css('background', 'pink');
+    })
+    $('input').blur(function(){
+        $(this).css('background', 'white');
+    })
+    $('input').keyup(function(e){//KEYUP method
+        console.log(e.target.value);
+    });
+    $('select#gender').change(function(e){//Change Method
+        $('#genderDisplay').html('Input Changed to '+ (e.target.value));
     })
 </script>
 </body>
