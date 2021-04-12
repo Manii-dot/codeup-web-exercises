@@ -41,9 +41,38 @@
     //     .addTo(marcoMap)
     //
     // KilleenMarker.setPopup(AsianBuffet);
+// added the Asian Buffet Marker
+    var AsianBuffetMarker = new mapboxgl.Marker()
+        .setLngLat([-97.73136, 31.09296])
+        .addTo(marcoMap)
+// setting up the popup
+    var AsianBuffetPopup = new mapboxgl.Popup()
+        .setLngLat([-97.73136, 31.09296])
+        .setHTML("<h6><em>Asian Buffet!</em></h6>")
+        .addTo(marcoMap)
 
+    AsianBuffetMarker.setPopup(AsianBuffetPopup);
+// Making sure the info window does not display until the marker has been clicked on.
+    AsianBuffetPopup.on('close', function (){
+        console.log(('popup was closed'));
+    })
 
-
+// Making the array for the three restaurants object
+    var favoriteRestaurants = [{
+        address: "3709 E Central Texas Expy, Killeen, TX 76543"
+    },
+        {
+            address: "700 W Central Texas Expy, Killeen, TX 76541"
+        },
+        {
+            address: "1029 S Fort Hood St, Killeen, TX 76541"
+        }
+    ]
+    favoriteRestaurants.forEach(function(){
+        geocode(favoriteRestaurants.address, mapboxToken).then(function(results){
+            marcoMap.setCenter(results);
+        })
+    })
 </script>
 
 </body>
