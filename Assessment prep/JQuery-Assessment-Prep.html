@@ -158,6 +158,12 @@
     $('select#gender').change(function(e){//Change Method
         $('#genderDisplay').html('Input Changed to '+ (e.target.value));
     })
+    $('#form').submit(function(e){
+        e.preventDefault();
+        var name = $('input#name').val();
+        console.log(name);
+    })
+    $('#name').css('background-color', 'red');
 </script>
 </body>
 </html>
