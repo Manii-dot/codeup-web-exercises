@@ -50,7 +50,13 @@
         // GET REQUEST to OpenWeatherMap using city parameter
         // https://openweathermap.org/current
 
-
+    // $.get("https://api.openweathermap.org/data/2.5/weather", {
+    //     q: "San Antonio, US",
+    //     appid: openWeatherKey,
+    //     units:"imperial"
+    // }).done(function(results){
+    // console.log(results)
+    // });
 
 
         // TODO: How can we get imperial units instead?
@@ -58,7 +64,14 @@
         // TODO: What are some additional ways we can get the weather from this API?
 
 
-
+        $.get("https://api.openweathermap.org/data/2.5/weather", {
+            appid: openWeatherKey,
+            lat: 29.423017,
+            lon: -98.48527,
+            units: "imperial",
+        }).done(function(results){
+            console.log(results)
+        });
 
 
 
@@ -76,8 +89,15 @@
 
         // TODO: What parameter can we include in order to get the daily forecast only
 
-
-
+    $.get("https://api.openweathermap.org/data/2.5/onecall", {
+        appid: openWeatherKey,
+        lat: 29.423017,
+        lon: -98.48527,
+        units: "imperial",
+        exclude: "current,munitely,hourly,alerts"
+    }).done(function(results) {
+        console.log(results);
+    })
     });
 
 
