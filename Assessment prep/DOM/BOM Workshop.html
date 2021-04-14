@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM/BOM Workshop</title>
+    <style>
+        #box {
+            width: 250px;
+            height: 250px;
+            border: 1px solid red;
+            z-index: 2;
+        }
+        .button {
+            padding: 1.5em;
+            margin-top: 1em;
+        }
+        .toggleClass1 {
+            background-color: rebeccapurple;
+        }
+        .toggleClass2 {
+            background-color: cornflowerblue;
+        }
+        #boxInfo {
+            margin-top: 1em;
+        }
+    </style>
+</head>
+<body>
+<div id="box"></div>
+<button class="button" id="changeBoxSize">Double the Box!</button>
+<button class="button" id="toggleClass">Toggle a class!</button>
+<div id="boxInfo"></div>
+<input id="input">
+<button id="inputBtn">Tell me your name!</button>
+<div id="helloUser">Hola, ni hao, guten tag, hello, bonjour to you, <span id="userName">user</span>!</div>
+<!--jQuery cdn-->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<!--Custom JS-->
+<script>
+    //TODO: When the #changeBoxSize button is clicked the box should double in size from what it was!
+    function doubleBoxSize(){
+        var box = $("#box");
+        console.log(box);
+        var boxHeight = box[0].clientHeight;
+        var boxWidth = box[0].clientWidth;
+        console.log(boxHeight);
+        box.css("height", boxHeight * 2);
+        box.css("width", boxWidth * 2);
+    }
+    $("#changeBoxSize").click(doubleBoxSize);
+    //TODO: I have two CSS classes - toggleClass1 and toggleClass2 - that are currently unused. When the #toggleClass button is clicked, program a bit of JavaScript to toggle between those classes to see the background-color switch back and forth with each click. Bonus: Write your callback function in a variable and use it instead!
+    function toggleColor(){
+        $("body").toggleClass("toggleClass1 toggleClass2");
+        // $("body").toggleClass("toggleClass2");
+    }
+    $("#toggleClass").click(toggleColor);
+    //TODO: In the #boxInfo element, when the BOX is hovered over the HEIGHT and WIDTH of the box would appear in that HTML area [div]
+    $("#box").hover(displayWidthHeight, clearWidthHeight);
+    function displayWidthHeight(){
+        var box = $("#box");
+        console.log(box);
+        var boxHeight = box[0].clientHeight;
+        var boxWidth = box[0].clientWidth;
+        $("#boxInfo").html("" + boxHeight + " " +  boxWidth);
+    }
+    function clearWidthHeight(){
+        $("#boxInfo").html("");
+    }
+    //TODO: When the user types in to our #input and then clicks #inputBtn, what they typed into the box should replace what was inside of the span #userName with the input's contents
+    function replaceName(){
+        var name = $("#input").val();
+        $("#userName").html(name);
+    }
+    $("#inputBtn").click(replaceName)
+    //TODO: Refactor the above work - after 5 seconds have passed from the user clicking #inputBtn and seeing #userName change, change the entire div of #helloUser to say "Let me know if you want to play a game. ."
+    function wannaPlay(){
+        var interval = setInterval(function(){
+            $("#helloUser").html("Let me know if you want to play a game. .");
+        }, 5000);
+        // clearInterval(interval);
+    }
+    $("#inputBtn").click(wannaPlay);
+
+
+
+
+</script>
+</body>
+</html>

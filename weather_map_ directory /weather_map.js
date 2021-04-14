@@ -8,7 +8,7 @@ how to get one day of weather to appear with the html
 //$("#find").on()('click', function(){
 
 
-$.get("https://api.openweathermap.org/data/2.5/weather", {
+$.get("https://api.openweathermap.org/data/2.5/onecall", {
     q: "Killeen, US",
     appid: openWeatherKey,
     units:"imperial"
