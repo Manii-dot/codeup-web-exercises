@@ -59,34 +59,43 @@
 <!--    <a class="link2" href="http://yahoo.com">Yahoo</a>-->
 <!--</div>-->
 <!--MOUSE EVENT SECTION-->
+<!--<header>-->
+<!--    <h1>jQuery Mouse Event crash course</h1>-->
+<!--</header>-->
+<!--<div id="container">-->
+<!--    <h3 id="heading1" class="btnClass">Mouse Event</h3>-->
+<!--    <button id="btn1">Button 1 </button>-->
+<!--    <button id="btn2">Button 2 </button>-->
+<!--    <p class="para1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus architecto commodi facere minima quis quos vel voluptatibus. Adipisci explicabo quasi rerum. Aspernatur enim expedita fugiat id, inventore similique tempora veniam?</p>-->
+<!--    <h1 id="coords"></h1>-->
+<!--    <hr>-->
+<!--    <form action="">-->
+<!--        <label>Name</label><br>-->
+<!--        <input type="text" id="name" name="name">-->
+<!--        <br>-->
+<!--        <label>Email</label><br>-->
+<!--        <input type="email" id="email" name="email"><br>-->
+<!--        <label>Gender</label><br>-->
+<!--        <select name="gender" id="gender">-->
+<!--            <option value="male">Male</option>-->
+<!--            <option value="female">Female</option>-->
+<!--            <option value="Prefere-not-to-say">Prefere not to say</option>-->
+<!--        </select>-->
+<!--        <br>-->
+<!--        <input type="submit" value="Submit">-->
+<!--    </form>-->
+<!--    <h2 id="genderDisplay"></h2>-->
+<!--</div>-->
+
 <header>
-    <h1>jQuery Mouse Event crash course</h1>
+    <h1>jQuery Crash Course | Dom Manipulation </h1>
 </header>
 <div id="container">
-    <h3 id="heading1" class="btnClass">Mouse Event</h3>
-    <button id="btn1">Button 1 </button>
-    <button id="btn2">Button 2 </button>
-    <p class="para1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus architecto commodi facere minima quis quos vel voluptatibus. Adipisci explicabo quasi rerum. Aspernatur enim expedita fugiat id, inventore similique tempora veniam?</p>
-    <h1 id="coords"></h1>
-    <hr>
-    <form action="">
-        <label>Name</label><br>
-        <input type="text" id="name" name="name">
-        <br>
-        <label>Email</label><br>
-        <input type="email" id="email" name="email"><br>
-        <label>Gender</label><br>
-        <select name="gender" id="gender">
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-            <option value="Prefere-not-to-say">Prefere not to say</option>
-        </select>
-        <br>
-        <input type="submit" value="Submit">
-    </form>
-    <h2 id="genderDisplay"></h2>
+    <button id="btn1">Button 1</button>
+    <p class="para1">This is a paragraph</p>
+    <p class="para2">This is another paragraph</p>
+    <div id="myDiv"></div>
 </div>
-
 <script>
     //------------------- SELECTOR SECTION-------------------------------------------------------------
     //$('h1').hide();
@@ -142,28 +151,33 @@
         // alert(e.currentTarget.innerHTML);
         // alert(e.currentTarget.className);
     //})
-    $(document).mousemove(function(e){//cool ways to append the content on the html web page
-        $('#coords').html('Coords: Y'+e.clientY+" X: "+e.clientX);
-    });
-    //EXAMPLE OF FOCUS AND BLUR---------------
-    $('input').focus(function(){
-        $(this).css('background', 'pink');
-    })
-    $('input').blur(function(){
-        $(this).css('background', 'white');
-    })
-    $('input').keyup(function(e){//KEYUP method
-        console.log(e.target.value);
-    });
-    $('select#gender').change(function(e){//Change Method
-        $('#genderDisplay').html('Input Changed to '+ (e.target.value));
-    })
-    $('#form').submit(function(e){
-        e.preventDefault();
-        var name = $('input#name').val();
-        console.log(name);
-    })
-    $('#name').css('background-color', 'red');
+    // $(document).mousemove(function(e){//cool ways to append the content on the html web page
+    //     $('#coords').html('Coords: Y'+e.clientY+" X: "+e.clientX);
+    // });
+    // //EXAMPLE OF FOCUS AND BLUR---------------
+    // $('input').focus(function(){
+    //     $(this).css('background', 'pink');
+    // })
+    // $('input').blur(function(){
+    //     $(this).css('background', 'white');
+    // })
+    // $('input').keyup(function(e){//KEYUP method
+    //     console.log(e.target.value);
+    // });
+    // $('select#gender').change(function(e){//Change Method
+    //     $('#genderDisplay').html('Input Changed to '+ (e.target.value));
+    // })
+    // $('#form').submit(function(e){
+    //     e.preventDefault();
+    //     var name = $('input#name').val();
+    //     console.log(name);
+    // })
+    // $('#name').css('background-color', 'red');
+
+    //DOM Manipulation
+$(document).ready(function(){
+
+})
 </script>
 </body>
 </html>
