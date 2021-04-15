@@ -293,7 +293,7 @@ const addOneD = arg1 => arg1 + 1;
  *****************************/
 //TODO Together: Refactor the following using ES6
 
-old way
+//old way
 function sayHello(name) {
 	if (typeof name === 'undefined') {
 		name = 'World';
