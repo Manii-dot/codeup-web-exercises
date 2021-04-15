@@ -28,7 +28,7 @@ function checkWeatherTwo(isRaining) {
 
 }
 
-//checkWeatherTwo(false) //What happens?
+//checkWeatherTwo(false) //What happens? reference error umbrella is not defined
 
 
 /*==============================================*/
@@ -110,15 +110,14 @@ let greeting = "Hello my name is " + firstName + ' ' + lastName + '.';
 
 //TODO: Refactor code from above, using template strings.
 
-
+let newGreeting = `Hello my name is ${firstName} ${lastName}`
 // console.log(newGreeting);
 
+let letter = `Hi marco , 
+this is a letter with multiple line
+--Douglas`;
 
-
-
-
-
-
+console.log(letter);
 
 
 /*==============================================*/
@@ -140,9 +139,14 @@ itemsHtml += "</ul>";
 
 
 //new way
+let newItemsHtml = `
+<ul>;
+<li> ${items[0]} </li>
+<li> ${items[1]} </li>
+<li> ${items[2]} </li>
+</ul>`;
 
-
-// console.log(newItemsHtml);
+console.log(newItemsHtml);
 
 
 /*==============================================*/
@@ -156,8 +160,9 @@ let program = {
     technology: "HTML, CSS, JS, Java"
 }
 
-
-// console.log(programLetter);
+let programLetter =`Hello and thank you for your interest in ${program.name}!
+Our program is located in ${program.location}. The program last ${program.length}`
+console.log(programLetter);
 
 
 
@@ -169,10 +174,10 @@ let program = {
  *****************************/
 
 
-// const arr = ["one", "two", "three"];
-// for (let ele of arr) {
-//     console.log(ele);
-// }
+const arr = ["one", "two", "three"];
+for (let ele of arr) {
+    console.log(ele);
+}
 
 
 
@@ -183,6 +188,9 @@ let program = {
 
 const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
 
+for(let ele of days){
+    console.log(`Welcome to ${ele}`)
+}
 
 
 /*==============================================*/
@@ -191,7 +199,9 @@ const days = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday"
 
 const instructors = ["Douglas", "Kenneth", "Justin", "Casey", "David"]
 
-
+for(let them of instructors){
+    console.log(them);
+}
 
 
 /* ****************************
@@ -204,7 +214,11 @@ function sayHello(name){
     return `Hello ${name}`;
 }
 
+//v1
+let sayHelloAgain = (name) => {return `hello, ${name}`}
 
+//v2
+let sayHelloAgain1 = (name) => `hello, ${name}`
 
 
 // console.log(sayHelloAgain("Douglas")); //Hello Douglas
@@ -220,13 +234,13 @@ function sayHello(name){
 // 	return a + b;
 // }
 
+const sum = (a, b) => a + b;
 
 
 
-
-// console.log(sum(5, 3)); //8
-// console.log(sum(5, 20)); //25
-// console.log(sum(1, 9)); //10
+console.log(sum(5, 3)); //8
+console.log(sum(5, 20)); //25
+console.log(sum(1, 9)); //10
 
 
 
