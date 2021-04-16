@@ -325,3 +325,5 @@ function helloCohort(greeting, cohort){
 
     return greeting + " " + cohort;
 }
+
+const helloCohort = (greeting="Good Morning", cohort="Marco")=> `${greeting} ${cohort}`;
