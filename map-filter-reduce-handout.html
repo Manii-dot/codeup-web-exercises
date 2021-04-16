@@ -12,13 +12,37 @@
 
 //TODO Together: Let's see a common approach we might have done in the past: our goal is to increase each element of an array by 1 [element + 1], then get an array back with those values
 
+var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// var numbersAddOne =[];
+// for(var i = 0; i < numbers.length; i += 1){
+//     numbersAddOne.push(numbers[i] + 1);
+// }
+// console.log(numbersAddOne);
 //TODO Together: Now, let's achieve the same result with the first part of our lesson: the MAP method~
+
+let numbersAddOneMap = numbers.map(function(num){
+    return num + 1;
+});
+console.log(numbersAddOneMap);
 
 //TODO Together: Let's get all these restaurant names out of this array of objects with .map()!
 
+
 //TODO: Create your own array of (up to 3 and at least 2) restaurant objects building off of the basic list you created during the MapBox exercise (or build one anew!) ~5 mins
+const restaurant = [
+    {
+    name: "Gou Lakay",
+    phone: "123-123-1234"
+    },
+    {
+        name: "Asian Buffet",
+        phone: "321-321-4321"
+    }
+];
 
 //TODO: Now, having created a personal array of restaurant objects for yourself, use .map() to get your favorite restaurant's names out of that collection, into another array, and out into the console! ~5 mins
+let coolRestaurant = restaurant.map(Name=>`${Name.name} is a cool reastaurant`);
+console.log(coolRestaurant);
 
 //~ * Filter * ~
 
