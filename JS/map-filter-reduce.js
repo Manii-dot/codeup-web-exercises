@@ -36,3 +36,7 @@ const users = [
     }
 ];
 
+let lahngArray = users.filter(function (lang){
+    return lang.languages.length > 2;
+})
+console.log(lahngArray);
