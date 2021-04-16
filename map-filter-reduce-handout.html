@@ -81,17 +81,88 @@ console.log(coolrest);
 //Reduce is an interesting animal in and of itself: it's a way to reduce a collection down to, typically, a single value of some kind:
 
 //TODO Together: Let's sum up some numbers with the .reduce() method and a number array!
+let numbers1 = [1, 2, 3, 4, 5, 6];
+//old ways: built a loop, used var of sum and look inside of the loop of the sum += numbers[i] spit out sum of our numbers
 
+// in es6 with .reduce(): has a couple components to it .reduce (callbackfunction, initialValue)
+let sum = numbers1.reduce(function(total, num){
+return total + num;
+}, 0)
+console.log("Our numbers added up are "+sum);
+
+
+//TODO Together: Let's take a step a bit deeper with .reduce() - .reduce()'s output can take many forms and shapes. For example, let's say we wanted to have a little Javascript that would count the length of the strings in an array and return that info back to us in an object. For example: ["Codeup", "San", Antonio", "Dallas", "Marco", Cohort", "ES6"] would get us: Object { Codeup: 6, San: 3, Antonio: 7, Dallas: 6, Marco: 5, Cohort: 6, ES6: 3 }
+
+let stringArr = ["Codeup", "San", "Antonio", "Dallas", "Marco", "Cohort", "ES6"];
+let strLengthObj = stringArr.reduce(function(object, element){
+    object[element] = element.length;
+    return object;
+}, {})
+console.log(strLengthObj);
 
 //TODO Together: That's pretty wild, eh! Wonder what else we could get up to with .reduce() - how about we make a function and use .reduce() inside of it? We'll write a function named countWords that takes a sentence in a single string. We need to split that sentence into an array and then write a .reduce() that would let us know how many times each word appeared in the string.
+// function countWords(sentence) {
+//     let words = sentence.split(' '); // transform a sentence into an array of words
+//
+//     let wordCountObject = words.reduce(function(wordCounts, word) {
+//         if (typeof wordCounts[word] === 'undefined') {
+//             // if the word is not yet present in our object, set it's value to 1
+//             wordCounts[word] = 1;
+//         } else {
+//             // otherwise increment the existing count
+//             wordCounts[word] += 1;
+//         }
+//         return wordCounts;
+//     }, {}); // start with an empty object
+//
+//     return wordCountObject;
+// }
 
+let sentence = "Mary had a little lamb , little lamb , little lamb";
+// console.log(countWords(sentence));
 
 //TODO Together: Pretty good, but do we want to count the number of times the comma is involved? If only we had a method that would .filter() - wait! Let's refactor the above function to do just that!
 
+function countWords(sentence) {
+    let words = sentence.split(' '); // transform a sentence into an array of words
 
+    words = words.filter(function(word){
+        return word !== ",";
+    }) //get out of here, comma! as long as the word is not strictly equivalent to a comma in a string, that word is headed into the words array
+
+    let wordCountObject = words.reduce(function(wordCounts, word) {
+        if (typeof wordCounts[word] === 'undefined') {
+            // if the word is not yet present in our object, set it's value to 1
+            wordCounts[word] = 1;
+        } else {
+            // otherwise increment the existing count
+            wordCounts[word] += 1;
+        }
+        return wordCounts;
+    }, {}); // start with an empty object
+
+    return wordCountObject;
+}
+
+console.log(countWords(sentence));
 
 //TODO: Let's make a new array of objects to use - make an array of objects [{},{},{}] consisting of a number of family members as objects with their name and ages as properties. Use .reduce() to sum up the age of those family members and see what it is! e.g. [{name: "Thurston Howell III", age: 50}, {name: "William Dean Howells", age: 83}] would be 133 by adding those two age properties together (50 + 83).
+let famArr = [{
+    name: "D. Howell",
+    age: 80
+},{
+    name: "J. Howell",
+    age: 77
+},{
+    name: "A.G.",
+    age: 26
+}]
 
+let sumFamilyAges = famArr.reduce(function(total, familyMember){
+    return total + familyMember.age;
+}, 0)
+
+console.log(sumFamilyAges);
 
 </script>
 </body>
