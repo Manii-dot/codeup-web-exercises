@@ -49,4 +49,10 @@ let userEmailAdd = users.map(function(Email){
 })
 console.log(userEmailAdd);
 
-//
+//Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
+let totalYears = users.reduce(function(total, num) {
+    return total + num.yearsOfExperience / users.length;
+}, 0)
+console.log(totalYears);
+
+//Use .reduce to get the longest email from the list of users.
