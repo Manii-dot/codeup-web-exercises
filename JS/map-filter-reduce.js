@@ -66,3 +66,13 @@ console.log(totalYears);
 
 
 console.log(longestEmail);
+
+//6
+let usernameString = user.reduce(function(accumulator, user){
+    return `${accumulator} ${user.name}`;
+}, 'instructors are: ').slice(0)+".";
+
+console.log(usernameString);
+
+let mapJoinSolution = `instructors are: ${users.map(user=>user.name).join(', ')}.`;
+console.log(mapJoinSolution);
