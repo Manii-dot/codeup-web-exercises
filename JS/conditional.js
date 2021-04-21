@@ -194,3 +194,4 @@ if(askUser){
     alert("Well forget you then!")
 }
 
+console.log("Done already!");
