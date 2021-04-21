@@ -30,3 +30,5 @@ function getLastpushDates(githubUsername){
 
 getLastpushDates("Manii-dot")
     .then((date)=>console.log(date));
+
+console.log(yes);
