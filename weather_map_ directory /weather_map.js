@@ -5,31 +5,48 @@ how to get one day of weather to appear with the html
  and then to five days
  */
 
-//$("#find").on()('click', function(){
+/*==============================WEATHER SECTION========================================*/
 
+//----------* DISPLAY THE WEATHER INFO ON THE MAP *------------------------------//
 
+function displayWeatherInFiveDays (results){
+    console.log(results);
+    console.log(results.city.name)
+    $('.cityDisplay').html(results.city.name);
+    let fiveDaysForecast = [0, 9, 17, 25, 33];
+    for(let i = 0; i <fiveDaysForecast.length; i++){
+        console.log(results.list[fiveDaysForecast[i]])
+
+        // displaying the temperature, icon, desc, hum, wind, press
+       $('.date').eq(i).html(results.list[fiveDaysForecast[i]].dt_txt.split(" ")[0]);
+        $('.temperature').eq(i).html(results.list[fiveDaysForecast[i]].main.temp_max+"/"+results.list[fiveDaysForecast[i]].main.temp_min+ "'F");
+        $('img').eq(i).attr("src", "http://openweathermap.org/img/w/" + results.list[fiveDaysForecast[i]].weather[0].icon+ ".png")
+        $('.description').eq(i).html("Description: " +results.list[fiveDaysForecast[i]].weather[0].description);
+        $('.humidity').eq(i).html("Humidity: " +results.list[fiveDaysForecast[i]].main.humidity);
+        $('.wind').eq(i).html("Wind: "+results.list[fiveDaysForecast[i]].wind.speed);
+        $('.pressure').eq(i).html("Pressure: " +results.list[fiveDaysForecast[i]].main.pressure);
+    }
+}
+
+// Submit city function
+$('#find').click(function(e){
+    e.preventDefault()
+    let userCity = $('#city').val();
+    $.get("https://api.openweathermap.org/data/2.5/forecast", {
+        q: userCity,
+        appid: openWeatherKey,
+        units:"imperial"
+    }).done(displayWeatherInFiveDays);
+})
+
+// original loading page
 $.get("https://api.openweathermap.org/data/2.5/forecast", {
     q: "Killeen, US",
     appid: openWeatherKey,
     units:"imperial"
-}).done(function(results){
-console.log(results);
-// Displaying the date
-    var currentDate = new Date()
-    var day = currentDate.getDate()
-    var month = currentDate.getMonth() + 1
-    var year = currentDate.getFullYear()
-$('.date').html("<b>" + day + "-" + month + "-" + year + "</b>");
-    let fiveDaysForecast = [0, 1, 9, 17, 25, 33];
-    for(let days of fiveDaysForecast){
+}).done(displayWeatherInFiveDays);
 
-    }
-    // displaying the temperature, icon, desc, hum, wind, press
-    $('.temperature').html(results.list[0].main.temp_max+"/"+results.list[0].main.temp_min+ "'F");
-    $('img').attr("src", "http://openweathermap.org/img/w/" + results.list[0].weather[0].icon+ ".png")
-    $('.description').html("Description: " +results.list[0].weather[0].description);
-    $('.humidity').html("Humidity: " +results.list[0].main.humidity);
-    $('.wind').html("Wind: "+results.list[0].wind.speed);
-    $('.pressure').html("Pressure: " +results.list[0].main.pressure);
-});
+/*================================MAPBOX PORTION ==================================*/
+
+mapboxgl.accessToken = mapboxToken;
 
