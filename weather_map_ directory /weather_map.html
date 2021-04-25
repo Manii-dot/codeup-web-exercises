@@ -6,13 +6,15 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="weather_map.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
     <!-- Mapbox CDN -->
-    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js"></script>
 </head>
 <body>
 <nav class="container">
@@ -26,7 +28,7 @@
         <input type="submit" value="Find" id="find">
     </form>
 </div>
-<div class="container" style="height: 50px; width: 300px">
+<div class="container-map"> <!-- style="height: 50px; width: 300px">-->
     <h3 class="cityDisplay"></h3>
     <div class="container forecast card">
         <p class="date"></p>
@@ -75,10 +77,20 @@
     </div>
 </div>
 
-<div class="container map" style="width: 100%; height: 400px">
+<div id="maps" style="width: 100%; height: 400px"></div>
 
-</div>
-
+<footer class="text-center">
+    <div>&#169; 2021 All rights reserved</div>
+    <div>
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="#"><i class="fa fa-rss"></i></a>
+        <a href="#"><i class="fa fa-google"></i></a>
+        <a href="#"><i class="fa fa-flickr"></i></a>
+        <a href="#"><i class="fa fa-linkedin"></i></a>
+        <a href="#"><i class="fa fa-pinterest"></i></a>
+    </div>
+</footer>
 
 <!--keys.js for the open map api-->
 <script src="../JS/keys.js"></script>

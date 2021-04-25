@@ -8,16 +8,16 @@
 </head>
 <body>
 <h3>This is the Map</h3>
-<div id='map' style='width: 600px; height: 600px;'></div>
+<div id='maps' style='width: 600px; height: 600px;'></div>
 <script src="JS/keys.js"></script>
-<script src="JS/mapbox-geocoder-utils.js"></script>
+<!--<script src="JS/mapbox-geocoder-utils.js"></script>-->
 <script>
     "use strict";
     mapboxgl.accessToken = mapboxToken;
 
     var marcoMap = new mapboxgl.Map({
-        container: "map",
-        style: "mapbox://styles/mapbox/dark-v10",
+        container: "maps",
+        style: "mapbox://styles/mapbox/light-v10",
         center: [-97.73136, 31.09296],
         zoom: 15
     });

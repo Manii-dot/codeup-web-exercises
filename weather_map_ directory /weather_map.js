@@ -50,3 +50,41 @@ $.get("https://api.openweathermap.org/data/2.5/forecast", {
 
 mapboxgl.accessToken = mapboxToken;
 
+// var marcoMap = new mapboxgl.Map({
+//     container: "map",
+//     style: "mapbox://styles/mapbox/light-v10",
+//     center: [-98.4861, 29.426],
+//     zoom: 10
+// });
+//
+// geocode("5002 Prewitt Ranch Road, Killeen, TX 76549", mapboxToken).then(function(results){
+//     var popup = new mapboxgl.Popup()
+//         .setHTML('<h6>Thanks Geocode</h6>')
+//     new mapboxgl.Marker()
+//         .setLngLat(results)
+//         .setPopup(popup)
+//         .addTo(marcoMap)
+//     marcoMap.flyTo({center: results})
+// })
+function setupMap(){
+let map = new mapboxgl.Map({
+    container: 'maps',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-97.73136, 31.09296],
+    zoom: 15
+});}
+
+var AsianBuffetMarker = new mapboxgl.Marker()
+    .setLngLat([-97.73136, 31.09296])
+    .addTo(map)
+
+var AsianBuffetPopup = new mapboxgl.Popup()
+    .setLngLat([-97.73136, 31.09296])
+    .setHTML("<h6><em>Asian Buffet!</em></h6>")
+    .addTo(map)
+
+AsianBuffetMarker.setPopup(AsianBuffetPopup);
+
+function displayGeoCode(){
+
+}
