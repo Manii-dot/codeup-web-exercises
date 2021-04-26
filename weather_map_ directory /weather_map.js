@@ -66,13 +66,13 @@ mapboxgl.accessToken = mapboxToken;
 //         .addTo(marcoMap)
 //     marcoMap.flyTo({center: results})
 // })
-function setupMap(){
+
 let map = new mapboxgl.Map({
     container: 'maps',
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [-97.73136, 31.09296],
     zoom: 15
-});}
+});
 
 var AsianBuffetMarker = new mapboxgl.Marker()
     .setLngLat([-97.73136, 31.09296])
@@ -85,6 +85,15 @@ var AsianBuffetPopup = new mapboxgl.Popup()
 
 AsianBuffetMarker.setPopup(AsianBuffetPopup);
 
-function displayGeoCode(){
-
-}
+$('#find').click(function(e){
+    e.preventDefault()
+    let userCityLocation = $('#city').val();
+geocode(userCityLocation, mapboxToken).then(function(results){
+    var popup = new mapboxgl.Popup()
+        .setHTML('<h6>Thanks Geocode</h6>')
+    new mapboxgl.Marker()
+        .setLngLat(results)
+        .setPopup(popup)
+        .addTo(map)
+    map.flyTo({center: results})
+})});
