@@ -4,6 +4,50 @@
     box-sizing: border-box;
 }
 
+*{
+    box-sizing: border-box;
+    line-height: 1.25em;
+}
+
+body{
+    /*margin: 0;*/
+    /*width: 100%;*/
+    height: 100vh;
+    /*font-family: "Montserrat", sans-serif;*/
+    background: url("img/img.jp.jpeg");
+    /*display: flex;*/
+    /*background-repeat: no-repeat;*/
+    /*background-position: center;*/
+    /*background-size: cover;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+input{
+    padding: 10px;
+    border-radius: 10px;
+}
+
 .container-map {
-    width: 300px;
+    display: flex;
+    justify-content: flex-start;
+    /*width: 300px;*/
+    /*border-radius: 25px;*/
+    /*background-color: #3B94D9;*/
+    /*color: black;*/
+    /*height: 500px;*/
+    /*display: flex;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+
+.container forecast card{
+opacity: 10px;
 }

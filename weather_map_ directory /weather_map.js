@@ -71,7 +71,7 @@ let map = new mapboxgl.Map({
     container: 'maps',
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [-97.73136, 31.09296],
-    zoom: 15
+    zoom: 10
 });
 
 var AsianBuffetMarker = new mapboxgl.Marker()
