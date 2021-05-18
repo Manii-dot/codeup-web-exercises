@@ -3,8 +3,36 @@
     margin: 0;
 }
 
-.wraper{
-    background: url("images.jpg") no-repeat;
+.wrapper{
+    background: url("rock.jpg") no-repeat;
     background-size: cover;
     height: 100vh;
+}
+
+.navbar{
+    height: 80px;
+    width: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+.logo{
+    width: 140px;
+    height: auto;
+    padding: 20px 100px;
+}
+
+.navbar ul{
+    float: right;
+    margin-right: 20px;
+}
+
+.navbar ul li{
+    list-style: none;
+    margin: 0 8px;
+    display: inline-block;
+    line-height: 80px;
+}
+
+.navbar{
+
 }
