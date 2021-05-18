@@ -28,95 +28,122 @@
 <script>
   //TODO: When the button is clicked with the id of #inputButton, the value of what is inside of the input field of #userValue should effect the id of #output as so: #output should display the text "The number of words you entered is:" followed by the appropriate number representing the number of words from the user's input.
 
-//   $('#inputButton').click(function(){
-// let userInput = $("#userInput").val();
-// $("#output").html(`The number of words you have entered is: ${userInput.split(" ").length}`);
-//   })
+  //Step one - event for the button
+  // Step two - when event fires (instructions inside of the callback function): grab .val()
+  //Step three - split value grabbed into arr strs
+  //Step four - .length arr and get into #output appropriately
+
+    $("#inputButton").click(function(){
+
+      let userInput = $("#userInput").val();
+      $("#output").html(`The number of words you entered is: ${userInput.split(" ").length}`);
+
+    })
+
 
   //TODO: I have a paragraph with the #sweetsParagraph. Whenever the button with the id of #yellowBtn is clicked, all of the words beginning with the letter "c" regardless of case will be now highlighted with a yellow background.
 
-  // $("#yellowBtn").click(function(){
-  //     let sweetsParagraph = $("#sweetsParagraph").html();
-  //     let sweetsArr = sweersParagraph.split(" ");
-  //     let workingArr = []; //bucket - a place to store information in the future
-  //     sweetsArr.forEach(function(word){
-  //         if("c" === word.toLowerCase().split("")[0]){
-  //             let prepend = "<span style='background-color:yellow'>"
-  //             let postpend = "</span>"
-  //             let htmlWrap = prepend + word + postpend;
-  //             workingArr.push(htmlWrap)
-  //         } else{
-  //             workingArr.push(word)
-  //         }
-  //     })
-  //     $()
-  // })
+    $("#yellowBtn").click(function(){
+      let sweetsArr = $("#sweetsParagraph").text().split(" ");
+
+        let workingArr = [];
+
+        $.each(sweetsArr, function(i, word){
+          if("c" === word.toLowerCase().split("")[0]){
+            let prepend = "<span style=\"background-color:yellow\">";
+            let postpend = "</span>";
+            let htmlWord = prepend+ word+ postpend;
+            workingArr.push(htmlWord);
+          } else {
+            workingArr.push(word);
+          }
+
+        })
+
+        $("#sweetsParagraph").html(workingArr.join(" "));
+    })
 
   //TODO: Let's work some more on #sweetsParagraph - I have a button with the id of #pinkBtn. Whenever #pinkBtn is clicked, I'd like to make words out of our paragraph that are longer than 8 characters to be highlighted with a pink background UNLESS that word also begins with "c". If the word begins with "c" and is longer than 8 characters, don't touch it!
 
-  // $("pinkBtn").click(function(){
-  //     let sweetsParagraph = $("#sweetsParagraph").html();
-  //     let sweetsArr = sweetsParagraph.split(" ");
-  //     console.log(sweetsArr);
-  //     let workingArr =[]; // store info in the future
-  //     sweetsArr.forEach(function(word){
-  //         console.log(word);
-  //         if(word.includes("\n")){
-  //             word = word.split("\n").join("");
-  //         }
-  //         if("c" === word.toLowerCase().split("")[0]){
-  //             workingArr.push(word);
-  //         }else if (word.length > 8){
-  //
-  //         }
-  //     })
-  // })
+    $("#pinkBtn").click(function(){
+      let sweetsArr = $("#sweetsParagraph").text().split(" ");
+      let workingArr = [];
+
+        sweetsArr.forEach(function(word){
+          if ("c" === word.toLowerCase().split("")[0]){
+            workingArr.push(word);
+          } else if (word.length > 8) {
+            let prepend = "<span style=\"background-color:deeppink\">";
+            let postpend = "</span>";
+            let htmlWord = prepend+ word+ postpend;
+            workingArr.push(htmlWord);
+          } else {
+            workingArr.push(word)
+          }
+        })
+
+        $("#sweetsParagraph").html(workingArr.join(" "));
+    })
+
 
   //TODO: I have a #bothBtn in this HTML - whenever #bothBtn is clicked, it will apply both of the above style guides to the paragraph simultaneously (both "c" starting words are highlighted yellow and all non-"c" starting words longer than 8 characters have pink highlight.)
 
+    $("#bothBtn").click(function(){
+      let sweetsArr = $("#sweetsParagraph").text().split(" ");
+      let workingArr = [];
 
+        sweetsArr.forEach(function(word){
+          if("c" === word.toLowerCase().split("")[0]){
+            let prepend = "<span style=\"background-color:yellow\">";
+            let postpend = "</span>";
+            let htmlWord = prepend+ word+ postpend;
+            workingArr.push(htmlWord);
+          } else if (word.length > 8) {
+            let prepend = "<span style=\"background-color:deeppink\">";
+            let postpend = "</span>";
+            let htmlWord = prepend+ word+ postpend;
+            workingArr.push(htmlWord);
+          } else {
+            workingArr.push(word)
+          }
+        })
+
+        $("#sweetsParagraph").html(workingArr.join(" "));
+    })
 
   //TODO Bonus: Refactor the above work where all three buttons can be clicked cleanly between each other and display their styles independently. First, a button to highlight the "c" words. Second, a button to highlight all non-"c" starting words with yellow. Lastly, a button that will apply both.
 
   //TODO: I have an unordered list #restaurantResults with two LIs representing a couple of restaurants. These <li>s have data-* attributes on the element representing whether or not they are vegetarian, their rough distance away, and then some database IDs we won't be needing. Depending on which <li> is hovered over, the div known as #isVeg should display a string similar to the following: "This restaurant is notVegetarian, is 2miles away, and is named restaurantName"
 
+    $("#restaurantResults li").hover(function(e){
+      let restaurantName =  $(e.target).html();
+      let isVeg =  $(e.target).attr("data-veg");
+      let distance =  $(e.target).attr("data-distance");
 
+        $("#isVeg").html(`This restaurant is ${isVeg}, is ${distance} away, and is named ${restaurantName}`);
+    })
 
   //TODO Bonus: Work on the formatting of the above ouutput string for #isVeg to adjust spacing and casing appropriately. For example, "This restaurant is notVegetarian, is 2miles away, and is named restaurantName" would now be "This restaurant is not vegetarian, is 2 miles away, and is named restaurantName".
 
-  //TODO: It seems throughout all of this our user is hungry - cupcake paragraphs, restaurants in a list? Let's go ahead and setTimeout for 10 seconds to redirect our user to "www.food.com"
+    $("#restaurantResults li").hover(function(e){
+      let restaurantName =  $(e.target).html();
+      let isVeg =  "";
+      if($(e.target).attr("data-veg") === "notVegetarian"){
+        isVeg = "not vegetarian";
+      } else {
+        isVeg = "vegetarian";
+      }
+      let distance =  $(e.target).attr("data-distance").slice(0,1) + " " +  $(e.target).attr("data-distance").slice(1);
 
-  // if (true) {
-  //     let x = 5;
-  // }
-  // console.log(typeof x);
-  //
-  // // function sayHello(name) {
-  // //     return 'Hello, ' + name + '!';
-  // // }
-  // const sayHello = (name) => `Hello, ${name}!`
-  //
-  // console.log(sayHello("yes"));
-  //
-  // let numbers = [1, 2, 3, 4, 5];
-  // console.log(numbers.map(n => n * 3));
+        $("#isVeg").html(`This restaurant is ${isVeg}, is ${distance} away, and is named ${restaurantName}`);
+    })
 
-  // const isDivisibleBy3 = n => n % 3 === 0;
-  //
-  // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  //
-  // console.log(numbers.filter(isDivisibleBy3));
-  // console.log(numbers);
+  //TODO: It seems throughout all of this our user is hungry - cupcake paragraphs, restaurants in a list? Let's go ahead and setTimeout for 10 seconds to redirect our user to "www.food.com" once the timer is done. That'll get them to all the food they could want!
 
-  const p = new Promise((resolve, reject) => {
-      // WHAT GOES HERE?
-      // return 3;
-      // resolve(3)
-  //     reject(3
-  // });
-  //
-  // p.then(result => console.log(result));
-  // p.catch(error => console.log('An error occured!'));
+  // window.setTimeout(function(){
+  //     window.location = "https://www.food.com"
+  // }, 10000)
+
 
 </script>
 </body>
