@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
+
+
 *{
     padding: 0;
     margin: 0;
@@ -16,7 +19,7 @@
 }
 
 .logo{
-    width: 140px;
+    width: 50px;
     height: auto;
     padding: 20px 100px;
 }
@@ -33,6 +36,61 @@
     line-height: 80px;
 }
 
-.navbar{
+.navbar ul li a{
+text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 6px 13px;
+    font-family: 'Roboto', sans-serif;
+    transition: .4s;
+}
 
+.navbar ul li a.active,
+.navbar ul li a:hover{
+    background: palevioletred;
+    border-radius: 2px;
+}
+
+.wrapper .center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: sans-serif;
+    user-select: none;
+}
+
+.center h1{
+    color: white;
+    font-size: 70px;
+    font-weight: bold;
+    width: 885px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.center .buttons{
+    margin: 35px 280px;
+}
+
+.buttons button{
+    height: 50px;
+    width: 150px;
+    font-size: 18px;
+    font-weight: bold;
+    color: black;
+    background: palevioletred;
+    border: 1px solid #cc0000;
+    outline: none;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: .5s;
+}
+
+.buttons .btn{
+    margin-left: 25px;
+}
+
+.buttons button{
+    background: #cc0000;
 }
