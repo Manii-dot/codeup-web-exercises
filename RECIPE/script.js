@@ -41,3 +41,5 @@ function addMeal(mealData, random = false){
 
     meals.appendChild(meal);
 }
+
+// SPECIAL NOTE---> have to fix a portion of this code to make the recipe display at the botton of the application
