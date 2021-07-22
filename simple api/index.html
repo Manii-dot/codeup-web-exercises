@@ -10,23 +10,17 @@
 
 <p id="demo"></p>
 
-<script>
-    const x = document.getElementById("demo");
+<h2>JavaScript Validation</h2>
 
-    function getLocation() {
-        try {
-            navigator.geolocation.getCurrentPosition(showPosition);
-        } catch {
-            x.innerHTML = err;
-        }
-    }
+<p>Enter a number and click OK:</p>
 
-    function showPosition(position) {
-        x.innerHTML = "Latitude: " + position.coords.latitude +
-            "<br>Longitude: " + position.coords.longitude;
-    }
-</script>
+<input id="id1" type="number" min="100" max="300" required>
+<button onclick="myFunction()">OK</button>
 
+<p>If the number is less than 100 or greater than 300, an error message will be displayed.</p>
+
+<p id="demo"></p>
+<script src="script.js"></script>
 </body>
 </html>
 
