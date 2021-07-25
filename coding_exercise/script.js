@@ -26,4 +26,23 @@ console.log(reverse(774883993));
     
   };
 
-  
+  //*********************************************************************************/
+
+  //Opposite number
+  function opposite(number) {
+    //your code here
+    return (-number)
+  }
+
+  console.log(opposite(3889))
+  //*********************************************************************************/
+
+  /*
+Given: an array containing hashes of names
+Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
+*/
+
+function list(names){
+    //your code here
+    
+  }
