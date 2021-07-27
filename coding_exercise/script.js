@@ -42,7 +42,9 @@ Given: an array containing hashes of names
 Return: a string formatted as a list of names separated by commas except for the last two names, which should be separated by an ampersand.
 */
 
-function list(names){
-    //your code here
-    
-  }
+function list(arr){
+  let len = arr.length;
+  if(len==0) return '';
+  return arr.slice(0, len-1).map(p=>p.name).join(", ") + (len>1 ? ' & ' : '') + arr[len-1].name;
+}
+
