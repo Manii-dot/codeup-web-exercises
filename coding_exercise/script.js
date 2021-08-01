@@ -73,3 +73,15 @@ function updateLight(current) {
   //your code here!
 
 }
+
+
+function multiTable(number) {
+  // good luck
+}
+
+function getRealFloor(n) {
+}
+
+function mouthSize(animal) {
+  // code here
+}
