@@ -85,3 +85,19 @@ function getRealFloor(n) {
 function mouthSize(animal) {
   // code here
 }
+
+var replaceDots = function(str) {
+  return str.replace(/./, '-');
+}
+
+function arrayDiff(a, b) {
+  
+}
+
+function divisors(integer) {
+  
+};
+
+function isValidWalk(walk) {
+  //insert brilliant code here
+}
